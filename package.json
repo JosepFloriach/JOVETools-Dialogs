@@ -1,8 +1,8 @@
 {
-  "name": "com.jovetools.utils",
+  "name": "com.jovetools.dialogs",
   "version": "0.9.0",
-  "displayName": "JOVETools - Utils",
-  "description": "Bunch of utilities to help development in Unity",
+  "displayName": "JOVETools - Dialogs",
+  "description": "Lightweight framework to create and trigger simple text dialogs.",
   "unity": "2019.1",
   "unityRelease": "0b5",
   "documentationUrl": "https://example.com/",
@@ -10,9 +10,10 @@
   "licensesUrl": "https://example.com/licensing.html",
   "keywords": [
     "JOVE",
-	"JOVEUtils",
-	"joveUtils",
-    "Utils"
+	"JOVEDialog",
+	"joveDialogs",
+    "Dialogs",
+    "Dialog"	
   ],
   "author": {
     "name": "Josep Floriach Ventosinos",

@@ -24,6 +24,9 @@ public class DialogQueue
     public void Clear()
     {
         requests.Clear();
+        readyForNext = true;
+        openNextInstantly = true;
+        timeBetweenMessages = 1.0f;
     }
 
     public void AddRequest(DialogSetup setup)

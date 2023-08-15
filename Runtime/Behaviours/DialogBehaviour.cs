@@ -14,6 +14,11 @@ public class DialogBehaviour : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        DialogController.GetInstance().CancelAllRequests();
+    }
+
     private void Start()
     {
         if (Setup.TriggerOnStart)

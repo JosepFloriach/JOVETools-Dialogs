@@ -26,4 +26,9 @@ public class DialogBehaviour : MonoBehaviour
             DialogController.GetInstance().OpenDialogRequest(Setup);
         }
     }
+	
+	private void Update()
+    {
+        DialogController.GetInstance().Update(Time.deltaTime);
+    }
 }

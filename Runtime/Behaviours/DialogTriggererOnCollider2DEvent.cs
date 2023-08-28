@@ -18,8 +18,10 @@ public class DialogTriggererOnCollider2DEvent : MonoBehaviour
         Close
     }
 
+    [SerializeField] private string tagFilter;
     [SerializeField] private EventType eventType;
     [SerializeField] private Behaviour behaviour;
+
     private DialogBehaviour dialog;
     private bool triggered = false;
 
@@ -35,7 +37,11 @@ public class DialogTriggererOnCollider2DEvent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (eventType == EventType.OnTriggerEnter && other.tag == "Player" && !triggered)
+        bool tagCondition = other.tag == tagFilter || other.tag == "";
+        bool eventTypeCondition = eventType == EventType.OnTriggerEnter;
+        bool notTriggeredPreviously = !triggered;
+
+        if (tagCondition && eventTypeCondition && notTriggeredPreviously)
         {
             if (behaviour == Behaviour.Open)
             {
@@ -50,7 +56,11 @@ public class DialogTriggererOnCollider2DEvent : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (eventType == EventType.OnTriggerExit && other.tag == "Player" && !triggered)
+        bool tagCondition = other.tag == tagFilter || other.tag == "";
+        bool eventTypeCondition = eventType == EventType.OnTriggerExit;
+        bool notTriggeredPreviously = !triggered;
+
+        if (tagCondition && eventTypeCondition && notTriggeredPreviously)
         {
             if (behaviour == Behaviour.Open)
             {
